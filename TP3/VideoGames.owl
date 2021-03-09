@@ -1,0 +1,792 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/msigp/ontologies/2021/1/untitled-ontology-35#"
+     xml:base="http://www.semanticweb.org/msigp/ontologies/2021/1/untitled-ontology-35"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/msigp/ontologies/2021/1/untitled-ontology-35"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#hasDifficulty -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#hasDifficulty">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Game"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Difficulty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#hasGenre -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#hasGenre">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Game"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Genre"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#hasPlatform -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#hasPlatform">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Game"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Platform"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#isPlaying -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#isPlaying">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Human"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Game"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Chess -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Chess">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#NamedGame"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#hasDifficulty"/>
+                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Hard"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#hasGenre"/>
+                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#MultiPlayer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#hasPlatform"/>
+                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Linux"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#hasPlatform"/>
+                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#MacOs"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#hasPlatform"/>
+                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Windows"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Difficulty -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Difficulty">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#Easy"/>
+                    <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#Hard"/>
+                    <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#Medium"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ValuePartition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Easy -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Easy">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Difficulty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#EasyGame -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#EasyGame">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#Game"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#Game"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#hasDifficulty"/>
+                                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Easy"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#FirstPersonShooter -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#FirstPersonShooter">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Genre"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#hasGenre"/>
+                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#FirstPersonShooter"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Game -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Game"/>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Gamer -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Gamer">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Human"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#Human"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#isPlaying"/>
+                        <owl:someValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Game"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#GamerHardcore -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#GamerHardcore">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Gamer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Genre -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Genre">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Game"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Hard -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Hard">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Difficulty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#HardGame -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#HardGame">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#Game"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#Game"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#hasDifficulty"/>
+                                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Hard"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Human -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Human"/>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#LeagueOfLegends -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#LeagueOfLegends">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#NamedGame"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#hasDifficulty"/>
+                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Medium"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#hasGenre"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#MOBA"/>
+                            <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#MultiPlayer"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#hasPlatform"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#MacOs"/>
+                            <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#Windows"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Linux -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Linux">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Platform"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#LinuxGame -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#LinuxGame">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#Game"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#Game"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#hasPlatform"/>
+                                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Linux"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#MOBA -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#MOBA">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Genre"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#hasGenre"/>
+                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#MOBA"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#MacOs -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#MacOs">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Platform"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#MacOsGame -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#MacOsGame">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#Game"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#Game"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#hasPlatform"/>
+                                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#MacOs"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Medium -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Medium">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Difficulty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#MediumGame -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#MediumGame">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#Game"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#Game"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#hasDifficulty"/>
+                                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Medium"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#MultiPlatformGame -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#MultiPlatformGame">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#Game"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#hasGenre"/>
+                        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Game"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#MultiPlayer -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#MultiPlayer">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Genre"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#hasGenre"/>
+                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#MultiPlayer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#MultiPlayerGame -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#MultiPlayerGame">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#Game"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#hasGenre"/>
+                        <owl:someValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#MultiPlayer"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#NamedGame -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#NamedGame">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Game"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Online -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Online">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Genre"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#hasGenre"/>
+                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Online"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#OnlingeGame -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#OnlingeGame">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#Game"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#Game"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#hasGenre"/>
+                                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Online"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Platform -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Platform">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Game"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Puzzle -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Puzzle">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Genre"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#hasGenre"/>
+                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Puzzle"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#RolePlayGame -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#RolePlayGame">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Genre"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#hasGenre"/>
+                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#RolePlayGame"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#SinglePlayer -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#SinglePlayer">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Genre"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#hasGenre"/>
+                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#SinglePlayer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#SinglePlayerGame -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#SinglePlayerGame">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#Game"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#Game"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#hasGenre"/>
+                                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#SinglePlayer"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Sudoku -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Sudoku">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#NamedGame"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#hasDifficulty"/>
+                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Medium"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#hasGenre"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#Puzzle"/>
+                            <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#SinglePlayer"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#hasPlatform"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#Linux"/>
+                            <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#MacOs"/>
+                            <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#Windows"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Valorant -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Valorant">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#NamedGame"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#hasDifficulty"/>
+                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Easy"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#hasGenre"/>
+                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#FirstPersonShooter"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#ValuePartition -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#ValuePartition">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Game"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Windows -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Windows">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Platform"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#WindowsGame -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#WindowsGame">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#Game"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#Game"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#hasPlatform"/>
+                                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Windows"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#WorldOfWarcraft -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#WorldOfWarcraft">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#NamedGame"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#hasDifficulty"/>
+                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Easy"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#hasGenre"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#MultiPlayer"/>
+                            <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#RolePlayGame"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#hasPlatform"/>
+                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Windows"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Adel -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Adel">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Gamer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Raouf -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Raouf">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Gamer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Salim -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Salim">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Gamer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#Chess"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#LeagueOfLegends"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#Sudoku"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#Valorant"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#WorldOfWarcraft"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#Easy"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#Hard"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#Medium"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#FirstPersonShooter"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#MultiPlayer"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#Online"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#Puzzle"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#RolePlayGame"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#SinglePlayer"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#Genre"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#NamedGame"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#Platform"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#ValuePartition"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#Linux"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#MacOs"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#Windows"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

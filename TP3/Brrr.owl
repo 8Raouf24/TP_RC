@@ -1,0 +1,242 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/msigp/ontologies/2021/1/untitled-ontology-37#"
+     xml:base="http://www.semanticweb.org/msigp/ontologies/2021/1/untitled-ontology-37"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/msigp/ontologies/2021/1/untitled-ontology-37"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#provoque -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#provoque"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#ATTEINTE-ECOSYS -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#ATTEINTE-ECOSYS"/>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Accident_Nucléaire -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Accident_Nucléaire">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Catastrophes_Technologiques"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#CHIMIE-EAUX -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#CHIMIE-EAUX"/>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Catastrophes_Ecologiques -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Catastrophes_Ecologiques">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#EVENEMENT"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#provoque"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#ATTEINTE-ECOSYS"/>
+                                    <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#DOMMAGE-NATURE"/>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Catastrophes_Technologiques"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Catastrophes_Technologiques -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Catastrophes_Technologiques">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#EVENEMENT"/>
+                    <owl:Class>
+                        <owl:complementOf>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#provoque"/>
+                                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#DOMMAGE-NATURE"/>
+                            </owl:Restriction>
+                        </owl:complementOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Cyclone -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Cyclone">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Phénomènes_Géophysiques"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#DOMMAGE-NATURE -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#DOMMAGE-NATURE"/>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Déséquilibre -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Déséquilibre">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#CHIMIE-EAUX"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#EVENEMENT -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#EVENEMENT"/>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Eruption_Volcanique -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Eruption_Volcanique">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Phénomènes_Géophysiques"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Feux_de_forêts -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Feux_de_forêts">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Catastrophes_Ecologiques"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Innondation -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Innondation">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#Risques_Naturels"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#provoque"/>
+                        <owl:someValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Déséquilibre"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Innondations -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Innondations">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Risques_Naturels"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Phénomènes_Géophysiques -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Phénomènes_Géophysiques">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.co-ode.org/ontologies/ont.owl#EVENEMENT"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#provoque"/>
+                        <owl:someValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Catastrophes_Ecologiques"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Risques_Naturels -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Risques_Naturels">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Catastrophes_Ecologiques"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Séisme -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Séisme">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Phénomènes_Géophysiques"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Feux_En_Amazonie -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Feux_En_Amazonie">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Catastrophes_Ecologiques"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Tchernobyl -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Tchernobyl">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Accident_Nucléaire"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
