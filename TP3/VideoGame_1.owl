@@ -1,0 +1,448 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#"
+     xml:base="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#HavePlatForm -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#HavePlatForm">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#SupportGame"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Game"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Havedifficulty -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Havedifficulty">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Game"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#difficulté"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#PlayedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#PlayedBy">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#isPlaying"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Playwith -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Playwith">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Gamer"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Gamer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#SupportGame -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#SupportGame"/>
+    
+
+
+    <!-- http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#isPlaying -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#isPlaying">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Human"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Game"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#CrossPlatformGame -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#CrossPlatformGame">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#HavePlatForm"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#platform"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Game"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#DifficultGame -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#DifficultGame">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Havedifficulty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#difficult"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Game"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#EasyGame -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#EasyGame">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Havedifficulty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#easy"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Game"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Game -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Game"/>
+    
+
+
+    <!-- http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Gamer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Gamer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Human"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#GamingPlatfor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#GamingPlatfor">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#SupportGame"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">3</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Game"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#platform"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#HardcoreGamer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#HardcoreGamer">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#isPlaying"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">3</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Game"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Gamer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Human -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Human"/>
+    
+
+
+    <!-- http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#MediumGame -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#MediumGame">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Havedifficulty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#medium"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Game"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#OnlineGame -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#OnlineGame">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Game"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Populargame -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Populargame">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#PlayedBy"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">3</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Gamer"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Game"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#difficult -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#difficult">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#difficulté"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#difficulté -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#difficulté"/>
+    
+
+
+    <!-- http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#easy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#easy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#difficulté"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#medium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#medium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#difficulté"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#platform -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#platform"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#ABDELHAK -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#ABDELHAK">
+        <rdf:type rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Gamer"/>
+        <isPlaying rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#LeagueOfLegends"/>
+        <isPlaying rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Valorant"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Chess -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Chess">
+        <rdf:type rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Game"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#LeagueOfLegends -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#LeagueOfLegends">
+        <rdf:type rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#OnlineGame"/>
+        <HavePlatForm rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#windows"/>
+        <PlayedBy rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Raouf"/>
+        <PlayedBy rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#adel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#MacOS -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#MacOS">
+        <rdf:type rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#platform"/>
+        <SupportGame rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Valorant"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Raouf -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Raouf">
+        <rdf:type rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Human"/>
+        <Playwith rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#adel"/>
+        <isPlaying rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Chess"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Sudoku -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Sudoku">
+        <rdf:type rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#EasyGame"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Game"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Valorant -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Valorant">
+        <rdf:type rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#OnlineGame"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#WordOfWarcraft -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#WordOfWarcraft">
+        <PlayedBy rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#ABDELHAK"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#adel -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#adel">
+        <rdf:type rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Human"/>
+        <isPlaying rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Valorant"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#salim -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#salim">
+        <rdf:type rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Human"/>
+        <isPlaying rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Sudoku"/>
+        <isPlaying rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Valorant"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#windows -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#windows">
+        <rdf:type rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#platform"/>
+        <SupportGame rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Valorant"/>
+        <SupportGame rdf:resource="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#WordOfWarcraft"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#ABDELHAK"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Raouf"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#ABDELHAK"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#adel"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#ABDELHAK"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#salim"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#LeagueOfLegends"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Valorant"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#LeagueOfLegends"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#WordOfWarcraft"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#MacOS"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#windows"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Raouf"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#adel"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Raouf"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#salim"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#Valorant"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#WordOfWarcraft"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#adel"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/picos/ontologies/2021/2/untitled-ontology-60#salim"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
